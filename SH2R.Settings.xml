@@ -29,7 +29,6 @@
 				<Setting Id="[+] WsaFW_Coin3 (!)" Label="Coin [Snake]" State="false"/>
 				<Setting Id="[+] WsaFW_Coin2 (!)" Label="Coin [Woman]" State="false"/>
 				<Setting Id="[+] WsaFW_KeyApartmentJ&amp;M (!)" Label="Apartment 201 Key" State="false"/>
-				<Setting Id="[+] WsaFW_MarysScarf (!)" Label="Mary's Scarf" State="false"/>
 			</Setting>
 		</Setting>
 		<Setting Id="BCApt" Label="Blue Creek Apartments" State="false">
@@ -107,6 +106,7 @@
 					<Setting Id="[+] LabOW_LighterWick (!)" Label="Lighter Wick" State="false"/>
 					<Setting Id="[+] LabOW_DisgustKey (!)" Label="Iron Key" State="false"/>
 					<Setting Id="[+] LabOW_LighterGas (!)" Label="Lighter Gas" State="false"/>
+					<Setting Id="[+] LabOW_Lighter (!)" Label="Lighter" State="false"/>
 					<Setting Id="[+] LabOW_LighterFixed (!)" Label="Fixed Lighter" State="false"/>
 					<Setting Id="[+] LabOW_FearPathHandcuffsKey (!)" Label="Small Key" State="false"/>
 					<Setting Id="[+] LabOW_Wirecutter (!)" Label="Wire Cutters" State="false"/>
