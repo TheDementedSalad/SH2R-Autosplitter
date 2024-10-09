@@ -1,0 +1,139 @@
+<Settings>
+	<Setting Id="itm" Label="Item Splits" State="false">
+		<Setting Id="ESVale" Label="East Side of South Vale" State="false">
+			<Setting Id="ESVP" Label="Item Pickups" State="false">
+				<Setting Id="[+] RtSH_WoodworkKey (!)" Label="Auto Parts Key" State="false"/>
+				<Setting Id="[+] EcFW_MapEastCity (!)" Label="Map of South Vale" State="false"/>
+				<Setting Id="[+] WoodenPlank (!)" Label="Wooden Plank" State="false"/>
+				<Setting Id="[+] EcFW_NeelysCoin (!)" Label="Neely's Bar Coin" State="false"/>
+				<Setting Id="[+] EcFW_VinylHalfB (!)" Label="Second Half of Vinyl Record" State="false"/>
+				<Setting Id="[+] EcFW_SaulApsB2Key (!)" Label="Room 5 Apartment Key" State="false"/>
+				<Setting Id="[+] EcFW_JukeboxButton (!)" Label="No 2. Jukebox Button" State="false"/>
+				<Setting Id="[+] EcFW_VinylHalfA (!)" Label="First Half of Vinyl Record" State="false"/>
+				<Setting Id="[+] EcFW_VinylGlued (!)" Label="Glued Vinyl Record" State="false"/>
+				<Setting Id="[+] EcFW_NeelysBarKey (!)" Label="Neely's Bar Key" State="false"/>
+				<Setting Id="[+] EcFW_WoodsideApartmentsKey (!)" Label="Wood Side Apartments Key" State="false"/>
+			</Setting>
+		</Setting>
+		<Setting Id="WSApt" Label="Wood Side Apartments" State="false">
+			<Setting Id="WSAP" Label="Item Pickups" State="false">
+				<Setting Id="[+] Flashlight (!)" Label="Flashlight" State="false"/>
+				<Setting Id="[+] WsaFW_KeyToChuteCouryard (!)" Label="Chute Courtyard Key" State="false"/>
+				<Setting Id="[+] WsaFW_WardrobePart (!)" Label="Golden Apple Handle" State="false"/>
+				<Setting Id="[+] WsaFW_KeyTo2ndFloor (!)" Label="2F Hallway Key" State="false"/>
+				<Setting Id="[+] Pistol (!)" Label="Pistol" State="false"/>
+				<Setting Id="[+] WsaFW_KeyToAp212 (!)" Label="Apartment 212 Key" State="false"/>
+				<Setting Id="[+] WsaFW_Coin1 (!)" Label="Coin [Man]" State="false"/>
+				<Setting Id="[+] WsaFW_KeyToStaircase (!)" Label="2F Small Staircase Key" State="false"/>
+				<Setting Id="[+] WsaFW_CannedJuice (!)" Label="Canned Juice" State="false"/>
+				<Setting Id="[+] WsaFW_Coin3 (!)" Label="Coin [Snake]" State="false"/>
+				<Setting Id="[+] WsaFW_Coin2 (!)" Label="Coin [Woman]" State="false"/>
+				<Setting Id="[+] WsaFW_KeyApartmentJ&amp;M (!)" Label="Apartment 201 Key" State="false"/>
+				<Setting Id="[+] WsaFW_MarysScarf (!)" Label="Mary's Scarf" State="false"/>
+			</Setting>
+		</Setting>
+		<Setting Id="BCApt" Label="Blue Creek Apartments" State="false">
+			<Setting Id="BCAP" Label="Item Pickups" State="false">
+				<Setting Id="[+] BcaOW_Apartment_303_Key (!)" Label="Apartment 306 Key" State="false"/>
+				<Setting Id="[+] BcaOW_Valve (!)" Label="Valve" State="false"/>
+				<Setting Id="[+] BcaOW_ClockHandHours (!)" Label="The Hour Hand" State="false"/>
+				<Setting Id="[+] BcaOW_ClockHandMinutes (!)" Label="The Minute Hand" State="false"/>
+				<Setting Id="[+] BcaOW_Bird_01 (!)" Label="Pidgeon Figurine" State="false"/>
+				<Setting Id="[+] BcaOW_Bird_02_Part_A (!)" Label="Wooden Swan Head" State="false"/>
+				<Setting Id="[+] BcaOW_Bird_02_Part_B (!)" Label="Malformed Figurine Part" State="false"/>
+				<Setting Id="[+] BcaOW_Bird_02 (!)" Label="Swan Figurine" State="false"/>
+				<Setting Id="[+] BcaOW_Bird_Key (!)" Label="Winged Key" State="false"/>
+				<Setting Id="[+] BcaOW_ResilienceKey (!)" Label="Key of Resilience" State="false"/>
+				<Setting Id="[+] BcaOW_ClockHandSeconds (!)" Label="The Second Hand" State="false"/>
+			</Setting>
+		</Setting>
+		<Setting Id="WSVale" Label="West Side of South Vale" State="false">
+			<Setting Id="WSVP" Label="Item Pickups" State="false">
+				<Setting Id="[+] WcFW_KeyToMotelGate (!)" Label="Gate Key" State="false"/>
+				<Setting Id="[+] IronPipe (!)" Label="Iron Pipe" State="false"/>
+			</Setting>
+		</Setting>
+		<Setting Id="BrHosp" Label="Brookhaven Hospital" State="false">
+			<Setting Id="BRHP" Label="Item Pickups" State="false">
+				<Setting Id="[+] HosFW_BasementKey (!)" Label="Basement Key" State="false"/>
+				<Setting Id="[+] HosFW_EmptyFuelCan (!)" Label="Empty Fuel Can" State="false"/>
+				<Setting Id="[+] HosFW_FullFuelCan (!)" Label="Full Fuel Can" State="false"/>
+				<Setting Id="[+] HosFW_1FInnerWardKey (!)" Label="1F Inner Ward Key" State="false"/>
+				<Setting Id="[+] HosFW_DisgustPatientBracelet (!)" Label="Filthy Bracelet" State="false"/>
+				<Setting Id="[+] HosFW_L1RoomKey (!)" Label="L1 Room Key" State="false"/>
+				<Setting Id="[+] HosFW_Shotgun (!)" Label="Shotgun" State="false"/>
+				<Setting Id="[+] HosFW_BentNeedle (!)" Label="Bent Needle" State="false"/>
+				<Setting Id="[+] HosFW_FearPatientBracelet (!)" Label="Marked Bracelet" State="false"/>
+				<Setting Id="[+] HosFW_MedicalTube (!)" Label="Medical Tube" State="false"/>
+				<Setting Id="[+] HosFW_NeedleMedicalTube (!)" Label="Medical Tube with Bent Needle attached" State="false"/>
+				<Setting Id="[+] HosFW_PoolPumpKey (!)" Label="Pool Pump Key" State="false"/>
+				<Setting Id="[+] HosFW_AggressiveBracelet (!)" Label="Bloodstained Bracelet" State="false"/>
+				<Setting Id="[+] HosFW_BookRoomKey (!)" Label="Director's Room Storage Key" State="false"/>
+				<Setting Id="[+] HosFW_SafeSymbol (!)" Label="Safe Button" State="false"/>
+				<Setting Id="[+] HosFW_RooftopKey (!)" Label="Rooftop Key" State="false"/>
+				<Setting Id="[+] HosFW_RooftopDiaryPageNote (!)" Label="Page From A Diary" State="false"/>
+				<Setting Id="[+] HosFW_LobotomyOrbitoclast (!)" Label="Key of Bliss" State="false"/>
+				<Setting Id="[+] HosFW_LobotomyHammer (!)" Label="Instrument of Force" State="false"/>
+				<Setting Id="[+] HosFW_LouisBoxKey (!)" Label="Lapis Eye Key" State="false"/>
+				<Setting Id="[+] HosFW_ElevatorButtonBF (!)" Label="-1 Elevator Button" State="false"/>
+				<Setting Id="[+] HosFW_CopperRing (!)" Label="Copper Ring" State="false"/>
+				<Setting Id="[+] HosFW_LeadRing (!)" Label="Lead Ring" State="false"/>
+				<Setting Id="[+] HosFW_HospitalEntranceKey (!)" Label="Hospital Entrance Key" State="false"/>
+			</Setting>
+			<Setting Id="OSVale" Label="Other World South Vale" State="false">
+				<Setting Id="OSVP" Label="Item Pickups" State="false">
+					<Setting Id="[+] EcOW_Wrench (!)" Label="Wrench" State="false"/>
+					<Setting Id="[+] EcOW_HistoricalSocietyKey (!)" Label="Historical Society Key" State="false"/>
+				</Setting>
+			</Setting>
+			<Setting Id="Prison" Label="Museum/Prison" State="false">
+				<Setting Id="PrisonP" Label="Item Pickups" State="false">
+					<Setting Id="[+] HisOW_PurgatoryKey (!)" Label="Spiral-Writing Key" State="false"/>
+					<Setting Id="[+] PriOW_Weight01 (!)" Label="The Heavist Weight" State="false"/>
+					<Setting Id="[+] PriOW_Weight03 (!)" Label="Medium Weight" State="false"/>
+					<Setting Id="[+] PriOW_GunsRoomKey (!)" Label="Armoury Key" State="false"/>
+					<Setting Id="[+] Rifle (!)" Label="Rifle" State="false"/>
+					<Setting Id="[+] PriOW_NaughtyBlockKey (!)" Label="Block D Key" State="false"/>
+					<Setting Id="[+] PriOW_GuardRoomKey (!)" Label="Shiv Key" State="false"/>
+					<Setting Id="[+] PriOW_Weight02 (!)" Label="Heavy Weight" State="false"/>
+					<Setting Id="[+] PriOW_BlockAKey (!)" Label="Upper Floor Key" State="false"/>
+					<Setting Id="[+] PriOW_Weight04 (!)" Label="Light Weight" State="false"/>
+					<Setting Id="[+] PriOW_Weight05 (!)" Label="The Lightest Weight" State="false"/>
+					<Setting Id="[+] LabOW_Lever (!)" Label="Execution Lever" State="false"/>
+				</Setting>
+			</Setting>
+			<Setting Id="Labr" Label="Labrynth" State="false">
+				<Setting Id="LabrP" Label="Item Pickups" State="false">
+					<Setting Id="[+] LabOW_LighterWick (!)" Label="Lighter Wick" State="false"/>
+					<Setting Id="[+] LabOW_DisgustKey (!)" Label="Iron Key" State="false"/>
+					<Setting Id="[+] LabOW_LighterGas (!)" Label="Lighter Gas" State="false"/>
+					<Setting Id="[+] LabOW_LighterFixed (!)" Label="Fixed Lighter" State="false"/>
+					<Setting Id="[+] LabOW_FearPathHandcuffsKey (!)" Label="Small Key" State="false"/>
+					<Setting Id="[+] LabOW_Wirecutter (!)" Label="Wire Cutters" State="false"/>
+				</Setting>
+			</Setting>
+			<Setting Id="Hotel" Label="Lakeview Hotel" State="false">
+				<Setting Id="HotelP" Label="Item Pickups" State="false">
+					<Setting Id="[+] LhOW_MusicBoxKey (!)" Label="Ornamental Key" State="false"/>
+					<Setting Id="[+] LhOW_SecondFloorLeftWingKey (!)" Label="Sunrise Wing Key" State="false"/>
+					<Setting Id="[+] LhOW_EmployeeElevatorKey (!)" Label="Employee Elevator Key" State="false"/>
+					<Setting Id="[+] LhOW_202Key (!)" Label="Key to Hotel Room 202" State="false"/>
+					<Setting Id="[+] LhOW_FreshApple (!)" Label="Ripe Apple" State="false"/>
+					<Setting Id="[+] LhOW_BasementStaircaseKey (!)" Label="Basement Key" State="false"/>
+					<Setting Id="[+] LhOW_Valve (!)" Label="Valve" State="false"/>
+					<Setting Id="[+] LhOW_BarKey (!)" Label="Venus Tears Bar Key" State="false"/>
+					<Setting Id="[+] LhOW_Figurine_C (!)" Label="The Little Mermaid Figurine" State="false"/>
+					<Setting Id="[+] LhOW_107Key (!)" Label="Key to Hotel Room 107" State="false"/>
+					<Setting Id="[+] LhOW_TechKey (!)" Label="Fireplace Key" State="false"/>
+					<Setting Id="[+] LhOW_Figurine_A_Damaged (!)" Label="Cinderella Figurine" State="false"/>
+					<Setting Id="[+] LhOW_Figurine_Damaged (!)" Label="Snow White Figurine" State="false"/>
+					<Setting Id="[+] LhOW_ThirdFloorCorridorKey (!)" Label="3F Corridor Key" State="false"/>
+					<Setting Id="[+] LhFW_ScarlettEgg (!)" Label="Scarlett Egg" State="false"/>
+					<Setting Id="[+] LhFW_RustColoredEgg (!)" Label="Rust Coloured Egg" State="false"/>
+				</Setting>
+			</Setting>
+		</Setting>
+	</Setting>
+	<Setting Id="End" Label="Final Split (Results Screen, always active)" State="false"/>
+</Settings>
+
