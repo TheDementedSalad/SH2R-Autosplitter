@@ -114,7 +114,7 @@
 				<Setting Id="[+] HosFW_1FInnerWardKey (!)" Label="1F Inner Ward Key" State="false"/>
 				<Setting Id="[+] HosFW_DisgustPatientBracelet (!)" Label="Filthy Bracelet" State="false"/>
 				<Setting Id="[+] HosFW_L1RoomKey (!)" Label="L1 Room Key" State="false"/>
-				<Setting Id="[+] HosFW_Shotgun (!)" Label="Shotgun" State="false"/>
+				<Setting Id="[+] Shotgun (!)" Label="Shotgun" State="false"/>
 				<Setting Id="[+] HosFW_BentNeedle (!)" Label="Bent Needle" State="false"/>
 				<Setting Id="[+] HosFW_FearPatientBracelet (!)" Label="Marked Bracelet" State="false"/>
 				<Setting Id="[+] HosFW_MedicalTube (!)" Label="Medical Tube" State="false"/>
