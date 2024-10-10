@@ -174,9 +174,9 @@
 				<Setting Id="Lv_Labyrinth_03_Cine_1078" Label="Light the Rope" State="false"/>
 				<Setting Id="Lv_Labyrinth_07_Cine_3048" Label="Find Maria's Corpse" State="false"/>
 				<Setting Id="Lv_Labyrinth_06_Cine_4310" Label="Start Eddie Fight" State="false"/>
-				<Setting Id="Lv_EddieBossFIght_Cine_287" Label="Eddie Phase 1" State="false"/>
-				<Setting Id="Lv_EddieBossFIght_Cine_245" Label="Eddie Phase 2" State="false"/>
-				<Setting Id="Lv_EddieBossFIght_Cine_1262" Label="Defeat Eddie" State="false"/>
+				<Setting Id="Lv_EddieBossFight_Cine_287" Label="Eddie Phase 1" State="false"/>
+				<Setting Id="Lv_EddieBossFight_Cine_245" Label="Eddie Phase 2" State="false"/>
+				<Setting Id="Lv_EddieBossFight_Cine_1262" Label="Defeat Eddie" State="false"/>
 				<Setting Id="Lv_TolucaLakeWater_01_Cine_1005" Label="Get In the Boat" State="false"/>
 			</Setting>
 			<Setting Id="LabrP" Label="Item Pickups" State="false">
