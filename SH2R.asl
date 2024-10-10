@@ -21,8 +21,6 @@ init
 	
 	vars.Helper["Transition"] = vars.Helper.MakeString(gEngine, 0xAE0, 0x0);
 	
-	vars.Helper["Cutscene"] = vars.Helper.Make<bool>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x1B0, 0x198);
-	
 	vars.Helper["DeathLoad"] = vars.Helper.Make<bool>(gEngine, 0x1070, 0x2B0);
 	
 	vars.Helper["Items"] = vars.Helper.Make<IntPtr>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6C0, 0x110 + 0x0);
@@ -35,6 +33,15 @@ init
 	vars.Helper["GameOver"] = vars.Helper.Make<long>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x118);
 	
 	vars.Helper["End"] = vars.Helper.Make<byte>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x740, 0xC0);
+	
+	vars.Helper["CutsceneName"] = vars.Helper.Make<ulong>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x140, 0x318, 0x18, 0x2B0, 0x2E0, 0x4C8);
+	vars.Helper["CutsceneName"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
+	
+	vars.Helper["CutscenePlaying"] = vars.Helper.Make<bool>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x140, 0x318, 0x18, 0x2B0, 0x2E0, 0x280);
+	vars.Helper["CutscenePlaying"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
+	
+	vars.Helper["CutsceneDuration"] = vars.Helper.Make<int>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x140, 0x318, 0x18, 0x2B0, 0x2E0, 0x294);
+	vars.Helper["CutsceneDuration"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
 	
 	vars.Helper["localPlayer"] = vars.Helper.Make<long>(gEngine, 0x1070, 0x38, 0x0, 0x30);
 	vars.Helper["localPlayer"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
@@ -78,10 +85,16 @@ onStart
 	vars.completedSplits.Clear();
 	vars.totalGameTime = 0;
 	vars.Inventory.Clear();
+	
+	// This makes sure the timer always starts at 0.00
+	timer.IsGameTimePaused = true;
 }
 
 start
 {
+	if(string.Format(vars.FNameToShortString(old.CutsceneName)) == "Lv_ObservationDeck_01_Cine" && string.Format(vars.FNameToShortString(current.CutsceneName)) != "Lv_ObservationDeck_01_Cine"){
+		return true;
+	}
 }
 
 split
@@ -90,68 +103,78 @@ split
 	string setting = "";
 	
 	// Item splits.
-	for (int i = 0; i < old.ItemCount; i++)
-	{
-
-		ulong item = vars.Helper.Read<ulong>(current.Items + 0xC * i);
-		int amount = vars.Helper.Read<int>(current.Items + 0x8 + 0xC * i);
-
-		int oldAmount;
-		if (vars.Inventory.TryGetValue(item, out oldAmount))
+	if(current.ItemCount > 0){
+		for (int i = 0; i < old.ItemCount; i++)
 		{
-			if (oldAmount < amount)
-			{
-				setting = string.Format(ItemFormat, '+', vars.FNameToShortString(item), amount);
-			}
-			else if (oldAmount > amount)
-			{
-				setting = string.Format(ItemFormat, '-', vars.FNameToShortString(item), amount);
-			}
-		}
-		else
-		{
-			setting = string.Format(ItemFormat, '+', vars.FNameToShortString(item), '!');
-		}
 
-		vars.Inventory[item] = amount;
+			ulong item = vars.Helper.Read<ulong>(current.Items + 0xC * i);
+			int amount = vars.Helper.Read<int>(current.Items + 0x8 + 0xC * i);
+
+			int oldAmount;
+			if (vars.Inventory.TryGetValue(item, out oldAmount))
+			{
+				if (oldAmount < amount)
+				{
+					setting = string.Format(ItemFormat, '+', vars.FNameToShortString(item), amount);
+				}
+				else if (oldAmount > amount)
+				{
+					setting = string.Format(ItemFormat, '-', vars.FNameToShortString(item), amount);
+				}
+			}
+			else
+			{
+				setting = string.Format(ItemFormat, '+', vars.FNameToShortString(item), '!');
+			}
+
+			vars.Inventory[item] = amount;
+			
+			// Debug. Comment out before release.
+			//if (!string.IsNullOrEmpty(setting))
+			//vars.Log(setting);
 		
-		// Debug. Comment out before release.
-		if (!string.IsNullOrEmpty(setting))
-		vars.Log(setting);
-
-		if (settings.ContainsKey(setting) && settings[setting]
+			if (settings.ContainsKey(setting) && settings[setting]
 			&& vars.completedSplits.Add(setting))
-		{
-			return true;
+			{
+				return true;
+			}
 		}
 	}
 	
+	if(current.CutsceneName != 0 && old.CutsceneName == 0){
+		setting = string.Format(vars.FNameToShortString(current.CutsceneName)) + "_" + current.CutsceneDuration;
+	}
+	
 	if(current.End != 0 && old.End == 0){
+		return true;
+	}
+	
+	// Debug. Comment out before release.
+	if (!string.IsNullOrEmpty(setting))
+	vars.Log(setting);
+
+	if (settings.ContainsKey(setting) && settings[setting]
+		&& vars.completedSplits.Add(setting))
+	{
 		return true;
 	}
 }
 
 isLoading
 {
-	return current.Saving != 0 || current.GameOver != 0 || current.Transition == "/Game/Game/Maps/Main_Mennu/Main_Menu" || current.localPlayer == null || current.DeathLoad || current.Cutscene || current.Pause && current.GameplayMenu == 0;
+	return current.Saving != 0 || current.GameOver != 0 || current.Transition == "/Game/Game/Maps/Main_Mennu/Main_Menu" || current.localPlayer == null || current.DeathLoad || current.CutscenePlaying || current.Pause && current.GameplayMenu == 0;
 	//return true;
 }
 
-gameTime
+reset
 {
-	/*
-	if(current.IGT > old.IGT){
-		return TimeSpan.FromSeconds(vars.totalGameTime + current.IGT);
+	if(string.Format(vars.FNameToShortString(current.CutsceneName)) == "Lv_ObservationDeck_01_Cine" && string.Format(vars.FNameToShortString(old.CutsceneName)) != "Lv_ObservationDeck_01_Cine"){
+		return true;
 	}
-	if(current.IGT == 0 && old.IGT > 0){
-		vars.totalGameTime = vars.totalGameTime + old.IGT;
-		return TimeSpan.FromSeconds(vars.totalGameTime + current.IGT);
-	}
-	*/
 }
 
 exit
 {
-	 //pauses timer if the game crashes
+	//pauses timer if the game crashes
 	timer.IsGameTimePaused = true;
 }
