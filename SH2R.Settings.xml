@@ -4,7 +4,6 @@
 			<Setting Id="ESVC" Label="Cutscenes" State="false">
 				<Setting Id="Lv_TolucaGraveyard_01_Cine_4223" Label="Meet Angela In the Graveyard" State="false"/>
 				<Setting Id="Lv_EastCity_00_Cine_402" Label="Collect South Vale Maps" State="false"/>
-				<Setting Id="Lv_EastCity_06_Logic_411" Label="See Lying Figure In Fog" State="false"/>
 				<Setting Id="Lv_MartinStreetEncounter_Cine_1093" Label="Attacked By Lying Figure" State="false"/>
 				<Setting Id="Lv_EastCity_13_Cine_1320" Label="Jump Through Window" State="false"/>
 				<Setting Id="Lv_SaulAps_01_Cine_327" Label="Climb Through Hole In Apartment 205" State="false"/>
