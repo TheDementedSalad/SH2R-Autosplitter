@@ -28,6 +28,7 @@ init
 	
 	// gEngine.GameInstance.LocalPlayers[0].PlayerController.AcknowledgedPawn.FName
 	vars.Helper["AcknowledgedPawn"] = vars.Helper.Make<ulong>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x18);
+	vars.Helper["AcknowledgedPawn"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
 	
 	// gEngine.GameInstance.LocalPlayers[0].PlayerController.AcknowledgedPawn.Items.CollectedItems.NumElements 
 	vars.Helper["Items"] = vars.Helper.Make<IntPtr>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6C0, 0x110 + 0x0);
