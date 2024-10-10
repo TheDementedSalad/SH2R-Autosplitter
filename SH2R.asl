@@ -32,7 +32,7 @@ init
 	vars.Helper["Saving"] = vars.Helper.Make<long>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x128, 0x318);
 	vars.Helper["GameOver"] = vars.Helper.Make<long>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x118);
 	
-	vars.Helper["End"] = vars.Helper.Make<byte>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x740, 0xC0);
+	vars.Helper["End"] = vars.Helper.Make<ulong>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x120);
 	
 	vars.Helper["CutsceneName"] = vars.Helper.Make<ulong>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x140, 0x318, 0x18, 0x2B0, 0x2E0, 0x4C8);
 	vars.Helper["CutsceneName"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
@@ -150,8 +150,8 @@ split
 	}
 	
 	// Debug. Comment out before release.
-	//if (!string.IsNullOrEmpty(setting))
-	//vars.Log(setting);
+	if (!string.IsNullOrEmpty(setting))
+	vars.Log(setting);
 
 	if (settings.ContainsKey(setting) && settings[setting]
 		&& vars.completedSplits.Add(setting))
