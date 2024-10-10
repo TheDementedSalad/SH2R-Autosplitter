@@ -1,6 +1,17 @@
 <Settings>
-	<Setting Id="itm" Label="Item Splits" State="false">
+	<Setting Id="Game" Label="Game Splits" State="false">
 		<Setting Id="ESVale" Label="East Side of South Vale" State="false">
+			<Setting Id="ESVC" Label="Cutscenes" State="false">
+				<Setting Id="Lv_TolucaGraveyard_01_Cine_4223" Label="Meet Angela In the Graveyard" State="false"/>
+				<Setting Id="Lv_EastCity_00_Cine_402" Label="Collect South Vale Maps" State="false"/>
+				<Setting Id="Lv_EastCity_06_Logic_411" Label="See Lying Figure In Fog" State="false"/>
+				<Setting Id="Lv_MartinStreetEncounter_Cine_1093" Label="Attacked By Lying Figure" State="false"/>
+				<Setting Id="Lv_EastCity_13_Cine_1320" Label="Jump Through Window" State="false"/>
+				<Setting Id="Lv_SaulAps_01_Cine_327" Label="Climb Through Hole In Apartment 205" State="false"/>
+				<Setting Id="Lv_NeelysBar_Cine_365" Label="Take Cover Off Jukebox" State="false"/>
+				<Setting Id="Lv_NeelysBar_Cine_2660" Label="Listen to the Music" State="false"/>
+				<Setting Id="Lv_EastCity_14_Cine_433" Label="Inspect Coat" State="false"/>
+			</Setting>
 			<Setting Id="ESVP" Label="Item Pickups" State="false">
 				<Setting Id="[+] RtSH_WoodworkKey (!)" Label="Auto Parts Key" State="false"/>
 				<Setting Id="[+] EcFW_MapEastCity (!)" Label="Map of South Vale" State="false"/>
@@ -16,6 +27,14 @@
 			</Setting>
 		</Setting>
 		<Setting Id="WSApt" Label="Wood Side Apartments" State="false">
+			<Setting Id="WSAC" Label="Cutscenes" State="false">
+				<Setting Id="Lv_WoodSide_01_Cine_700" Label="Laura Stamps On Hand" State="false"/>
+				<Setting Id="Lv_WoodSide_03_Cine_749" Label="Throw the Canned Juice Down the Chute" State="false"/>
+				<Setting Id="Lv_WoodSide_01_Cine_3367" Label="Meet Eddie" State="false"/>
+				<Setting Id="Lv_WoodSide_01_Cine_593" Label="Take Cover Off the Coin Puzzle" State="false"/>
+				<Setting Id="Lv_WoodSide_02_Cine_4880" Label="Meet Pyramid Head" State="false"/>
+				<Setting Id="Lv_WoodSide_02_Cine_764" Label="Enter Blue Creek Apartments" State="false"/>
+			</Setting>
 			<Setting Id="WSAP" Label="Item Pickups" State="false">
 				<Setting Id="[+] Flashlight (!)" Label="Flashlight" State="false"/>
 				<Setting Id="[+] WsaFW_KeyToChuteCouryard (!)" Label="Chute Courtyard Key" State="false"/>
@@ -32,6 +51,12 @@
 			</Setting>
 		</Setting>
 		<Setting Id="BCApt" Label="Blue Creek Apartments" State="false">
+			<Setting Id="BCAC" Label="Cutscenes" State="false">
+				<Setting Id="Lv_BlueCreek_Logic_309" Label="Take Cover Off Clock" State="false"/>
+				<Setting Id="Lv_BlueCreek_01_A_Angela_Static_8425" Label="Find Angela" State="false"/>
+				<Setting Id="Lv_PyramidHeadBossFight_Cine_722" Label="Start Pyramid Head Fight" State="false"/>
+				<Setting Id="Lv_BlueCreek_05_Cine_617" Label="Finish Pyramid Head Fight" State="false"/>
+			</Setting>
 			<Setting Id="BCAP" Label="Item Pickups" State="false">
 				<Setting Id="[+] BcaOW_Apartment_303_Key (!)" Label="Apartment 306 Key" State="false"/>
 				<Setting Id="[+] BcaOW_Valve (!)" Label="Valve" State="false"/>
@@ -47,12 +72,41 @@
 			</Setting>
 		</Setting>
 		<Setting Id="WSVale" Label="West Side of South Vale" State="false">
+			<Setting Id="WSVC" Label="Cutscenes" State="false">
+				<Setting Id="Lv_RoadToPark_01_Cine_1867" Label="Meet With Laura" State="false"/>
+				<Setting Id="Lv_RosewaterPark_01_Cine_7481" Label="Meet Maria" State="false"/>
+				<Setting Id="Lv_WestCity_03_Cine_2310" Label="Road's Out" State="false"/>
+				<Setting Id="Lv_HeavensNight_01_Cine_1900" Label="Reach Heaven's Night" State="false"/>
+				<Setting Id="Lv_WestCity_07_Cine_5425" Label="Maria's Story About Lady of the Island" State="false"/>
+				<Setting Id="Lv_MovieTheater_01_Cine_3328" Label="Meet Eddie In the Theater" State="false"/>
+				<Setting Id="Lv_MovieTheater_01_Cine_361" Label="Meet Maria Outside Theater" State="false"/>
+			</Setting>
 			<Setting Id="WSVP" Label="Item Pickups" State="false">
 				<Setting Id="[+] WcFW_KeyToMotelGate (!)" Label="Gate Key" State="false"/>
 				<Setting Id="[+] IronPipe (!)" Label="Iron Pipe" State="false"/>
 			</Setting>
 		</Setting>
 		<Setting Id="BrHosp" Label="Brookhaven Hospital" State="false">
+			<Setting Id="BRHC" Label="Cutscenes" State="false">
+				<Setting Id="Lv_HospitalStaircase_01_Cine_602" Label="Chase Laura Up the Stairs" State="false"/>
+				<Setting Id="Lv_HospitalBasement_01_Logic_699" Label="Fill the Gas Canister" State="false"/>
+				<Setting Id="Lv_HospitalBasement_01_Cine_403" Label="Fill the Generator" State="false"/>
+				<Setting Id="Lv_HospitalElevator_01_Cine_1146" Label="Go Up the Elevator" State="false"/>
+				<Setting Id="Lv_Hospital_03_Cine_535" Label="Lift Up Bed Sheet" State="false"/>
+				<Setting Id="Lv_Hospital_02_Cine_505" Label="Grab the Teddy Bear" State="false"/>
+				<Setting Id="Lv_Hospital_01_Cine_664" Label="Fish Out the Key In Pharmacy" State="false"/>
+				<Setting Id="Lv_Hospital_02_Cine_450" Label="Pull Back Red Curtain For Symbol Puzzle" State="false"/>
+				<Setting Id="Lv_HospitalRoof_01_Cine_1728" Label="Grabbed By Pyramid Head" State="false"/>
+				<Setting Id="Lv_Hospital_03_Cine_5650" Label="Start Flesh Lips" State="false"/>
+				<Setting Id="Lv_FleshLipBossFight_Cine_885" Label="Defeat Flesh Lips" State="false"/>
+				<Setting Id="Lv_Hospital_OW_02_B_Cine_280" Label="Lift the Cloth For Lapis Key Puzzle" State="false"/>
+				<Setting Id="Lv_Hospital_OW_02_B_Cine_1880" Label="Open the Metal Box" State="false"/>
+				<Setting Id="Lv_Hospital_OW_Basement_D_Cine_2984" Label="Meet Up With Maria" State="false"/>
+				<Setting Id="Lv_Hospital_OW_01_B_Logic_2122" Label="Open The Freezer" State="false"/>
+				<Setting Id="Lv_Hospital_OW_02_B_Cine_1766" Label="Open the Ring Door" State="false"/>
+				<Setting Id="Lv_Hospital_PyramidChase_02_Cine_2344" Label="Maria Dies" State="false"/>
+				<Setting Id="Lv_Hospital_OW_01_D_Cine_269" Label="See Laura Running Off" State="false"/>
+			</Setting>
 			<Setting Id="BRHP" Label="Item Pickups" State="false">
 				<Setting Id="[+] HosFW_BasementKey (!)" Label="Basement Key" State="false"/>
 				<Setting Id="[+] HosFW_EmptyFuelCan (!)" Label="Empty Fuel Can" State="false"/>
@@ -79,61 +133,97 @@
 				<Setting Id="[+] HosFW_LeadRing (!)" Label="Lead Ring" State="false"/>
 				<Setting Id="[+] HosFW_HospitalEntranceKey (!)" Label="Hospital Entrance Key" State="false"/>
 			</Setting>
-			<Setting Id="OSVale" Label="Other World South Vale" State="false">
-				<Setting Id="OSVP" Label="Item Pickups" State="false">
-					<Setting Id="[+] EcOW_Wrench (!)" Label="Wrench" State="false"/>
-					<Setting Id="[+] EcOW_HistoricalSocietyKey (!)" Label="Historical Society Key" State="false"/>
-				</Setting>
+		</Setting>
+		<Setting Id="OSVale" Label="Other World South Vale" State="false">
+			<Setting Id="OSVC" Label="Cutscenes" State="false">
+				<Setting Id="Lv_EastCityOW_05_Cine_1123" Label="Answer the Phone" State="false"/>
+				<Setting Id="Lv_RosewaterPark_01_Cine_6075" Label="Meet Angela At Statue" State="false"/>
 			</Setting>
-			<Setting Id="Prison" Label="Museum/Prison" State="false">
-				<Setting Id="PrisonP" Label="Item Pickups" State="false">
-					<Setting Id="[+] HisOW_PurgatoryKey (!)" Label="Spiral-Writing Key" State="false"/>
-					<Setting Id="[+] PriOW_Weight01 (!)" Label="The Heavist Weight" State="false"/>
-					<Setting Id="[+] PriOW_Weight03 (!)" Label="Medium Weight" State="false"/>
-					<Setting Id="[+] PriOW_GunsRoomKey (!)" Label="Armoury Key" State="false"/>
-					<Setting Id="[+] Rifle (!)" Label="Rifle" State="false"/>
-					<Setting Id="[+] PriOW_NaughtyBlockKey (!)" Label="Block D Key" State="false"/>
-					<Setting Id="[+] PriOW_GuardRoomKey (!)" Label="Shiv Key" State="false"/>
-					<Setting Id="[+] PriOW_Weight02 (!)" Label="Heavy Weight" State="false"/>
-					<Setting Id="[+] PriOW_BlockAKey (!)" Label="Upper Floor Key" State="false"/>
-					<Setting Id="[+] PriOW_Weight04 (!)" Label="Light Weight" State="false"/>
-					<Setting Id="[+] PriOW_Weight05 (!)" Label="The Lightest Weight" State="false"/>
-					<Setting Id="[+] LabOW_Lever (!)" Label="Execution Lever" State="false"/>
-				</Setting>
+			<Setting Id="OSVP" Label="Item Pickups" State="false">
+				<Setting Id="[+] EcOW_Wrench (!)" Label="Wrench" State="false"/>
+				<Setting Id="[+] EcOW_HistoricalSocietyKey (!)" Label="Historical Society Key" State="false"/>
 			</Setting>
-			<Setting Id="Labr" Label="Labrynth" State="false">
-				<Setting Id="LabrP" Label="Item Pickups" State="false">
-					<Setting Id="[+] LabOW_LighterWick (!)" Label="Lighter Wick" State="false"/>
-					<Setting Id="[+] LabOW_DisgustKey (!)" Label="Iron Key" State="false"/>
-					<Setting Id="[+] LabOW_LighterGas (!)" Label="Lighter Gas" State="false"/>
-					<Setting Id="[+] LabOW_Lighter (!)" Label="Lighter" State="false"/>
-					<Setting Id="[+] LabOW_LighterFixed (!)" Label="Fixed Lighter" State="false"/>
-					<Setting Id="[+] LabOW_FearPathHandcuffsKey (!)" Label="Small Key" State="false"/>
-					<Setting Id="[+] LabOW_Wirecutter (!)" Label="Wire Cutters" State="false"/>
-				</Setting>
+		</Setting>
+		<Setting Id="Prison" Label="Museum/Prison" State="false">
+			<Setting Id="PrisonC" Label="Cutscenes" State="false">
+				<Setting Id="Lv_Prison_01_Cine_4870" Label="Meet Eddie In Prison" State="false"/>
+				<Setting Id="Lv_Prison_05_Logic_311" Label="Lift Cover off Weights Puzzle" State="false"/>
+				<Setting Id="Lv_Prison_05_Cine_517" Label="Choose the Correct Noose" State="false"/>
 			</Setting>
-			<Setting Id="Hotel" Label="Lakeview Hotel" State="false">
-				<Setting Id="HotelP" Label="Item Pickups" State="false">
-					<Setting Id="[+] LhOW_MusicBoxKey (!)" Label="Ornamental Key" State="false"/>
-					<Setting Id="[+] LhOW_SecondFloorLeftWingKey (!)" Label="Sunrise Wing Key" State="false"/>
-					<Setting Id="[+] LhOW_EmployeeElevatorKey (!)" Label="Employee Elevator Key" State="false"/>
-					<Setting Id="[+] LhOW_202Key (!)" Label="Key to Hotel Room 202" State="false"/>
-					<Setting Id="[+] LhOW_FreshApple (!)" Label="Ripe Apple" State="false"/>
-					<Setting Id="[+] LhOW_BasementStaircaseKey (!)" Label="Basement Key" State="false"/>
-					<Setting Id="[+] LhOW_Valve (!)" Label="Valve" State="false"/>
-					<Setting Id="[+] LhOW_BarKey (!)" Label="Venus Tears Bar Key" State="false"/>
-					<Setting Id="[+] LhOW_Figurine_C (!)" Label="The Little Mermaid Figurine" State="false"/>
-					<Setting Id="[+] LhOW_107Key (!)" Label="Key to Hotel Room 107" State="false"/>
-					<Setting Id="[+] LhOW_TechKey (!)" Label="Fireplace Key" State="false"/>
-					<Setting Id="[+] LhOW_Figurine_A_Damaged (!)" Label="Cinderella Figurine" State="false"/>
-					<Setting Id="[+] LhOW_Figurine_Damaged (!)" Label="Snow White Figurine" State="false"/>
-					<Setting Id="[+] LhOW_ThirdFloorCorridorKey (!)" Label="3F Corridor Key" State="false"/>
-					<Setting Id="[+] LhFW_ScarlettEgg (!)" Label="Scarlett Egg" State="false"/>
-					<Setting Id="[+] LhFW_RustColoredEgg (!)" Label="Rust Coloured Egg" State="false"/>
-				</Setting>
+			<Setting Id="PrisonP" Label="Item Pickups" State="false">
+				<Setting Id="[+] HisOW_PurgatoryKey (!)" Label="Spiral-Writing Key" State="false"/>
+				<Setting Id="[+] PriOW_Weight01 (!)" Label="The Heavist Weight" State="false"/>
+				<Setting Id="[+] PriOW_Weight03 (!)" Label="Medium Weight" State="false"/>
+				<Setting Id="[+] PriOW_GunsRoomKey (!)" Label="Armoury Key" State="false"/>
+				<Setting Id="[+] Rifle (!)" Label="Rifle" State="false"/>
+				<Setting Id="[+] PriOW_NaughtyBlockKey (!)" Label="Block D Key" State="false"/>
+				<Setting Id="[+] PriOW_GuardRoomKey (!)" Label="Shiv Key" State="false"/>
+				<Setting Id="[+] PriOW_Weight02 (!)" Label="Heavy Weight" State="false"/>
+				<Setting Id="[+] PriOW_BlockAKey (!)" Label="Upper Floor Key" State="false"/>
+				<Setting Id="[+] PriOW_Weight04 (!)" Label="Light Weight" State="false"/>
+				<Setting Id="[+] PriOW_Weight05 (!)" Label="The Lightest Weight" State="false"/>
+				<Setting Id="[+] LabOW_Lever (!)" Label="Execution Lever" State="false"/>
+			</Setting>
+		</Setting>
+		<Setting Id="Labr" Label="Labyrinth" State="false">
+			<Setting Id="LabrC" Label="Cutscenes" State="false">
+				<Setting Id="Lv_Labyrinth_01_Cine_1470" Label="Start Abstract Daddy Fight" State="false"/>
+				<Setting Id="Lv_Labyrinth_01_Cine_5260" Label="Defeat Abstract Daddy" State="false"/>
+				<Setting Id="Lv_Labyrinth_07_Cine_5278" Label="Meet Maria In Cell" State="false"/>
+				<Setting Id="Lv_Labyrinth_03_Cine_926" Label="Open the Fridge" State="false"/>
+				<Setting Id="Lv_Labyrinth_03_Cine_1078" Label="Light the Rope" State="false"/>
+				<Setting Id="Lv_Labyrinth_07_Cine_3048" Label="Find Maria's Corpse" State="false"/>
+				<Setting Id="Lv_Labyrinth_06_Cine_4310" Label="Start Eddie Fight" State="false"/>
+				<Setting Id="Lv_EddieBossFIght_Cine_287" Label="Eddie Phase 1" State="false"/>
+				<Setting Id="Lv_EddieBossFIght_Cine_245" Label="Eddie Phase 2" State="false"/>
+				<Setting Id="Lv_EddieBossFIght_Cine_1262" Label="Defeat Eddie" State="false"/>
+				<Setting Id="Lv_TolucaLakeWater_01_Cine_1005" Label="Get In the Boat" State="false"/>
+			</Setting>
+			<Setting Id="LabrP" Label="Item Pickups" State="false">
+				<Setting Id="[+] LabOW_LighterWick (!)" Label="Lighter Wick" State="false"/>
+				<Setting Id="[+] LabOW_DisgustKey (!)" Label="Iron Key" State="false"/>
+				<Setting Id="[+] LabOW_LighterGas (!)" Label="Lighter Gas" State="false"/>
+				<Setting Id="[+] LabOW_Lighter (!)" Label="Lighter" State="false"/>
+				<Setting Id="[+] LabOW_LighterFixed (!)" Label="Fixed Lighter" State="false"/>
+				<Setting Id="[+] LabOW_FearPathHandcuffsKey (!)" Label="Small Key" State="false"/>
+				<Setting Id="[+] LabOW_Wirecutter (!)" Label="Wire Cutters" State="false"/>
+			</Setting>
+		</Setting>
+		<Setting Id="Hotel" Label="Lakeview Hotel" State="false">
+			<Setting Id="HotelC" Label="Cutscenes" State="false">
+				<Setting Id="Lv_TolucaLakeWater_01_Cine_1245" Label="Reach the Hotel" State="false"/>
+				<Setting Id="Lv_LakeviewHotelOW_01_Cine_8651" Label="At the Piano With Laura" State="false"/>
+				<Setting Id="Lv_LakeviewHotelOW_02_Logic_770" Label="Pick Up Your Things After Basement" State="false"/>
+				<Setting Id="Lv_LakeviewHotelOW_03_Cine_795" Label="Drop Cinderella Figurine" State="false"/>
+				<Setting Id="Lv_LakeviewHotel_Transition_Cine_9526" Label="Find Out the Truth" State="false"/>
+				<Setting Id="Lv_LakeviewHotelFW_03_Cine_510" Label="Break Floor With Cart" State="false"/>
+				<Setting Id="Lv_LakeviewHotelFW_Basement_01_Logic_764" Label="Open Stuck Elevator Doors" State="false"/>
+				<Setting Id="Lv_LakeviewHotelFW_AngelasStaircase_01_Cine_6865" Label="Meet Angela In Her Otherworld" State="false"/>
+				<Setting Id="Lv_TwoPyramidHeadsBossFight_Cine_3377" Label="Start Double Pyramid Head Fight" State="false"/>
+				<Setting Id="Lv_TwoPyramidHeadsBossFight_Cine_990" Label="Defeat Double Pyramid Head" State="false"/>
+				<Setting Id="Lv_MaryBossFight_Cine_5267" Label="Start Mary Boss Fight" State="false"/>
+				<Setting Id="Lv_MaryBossFight_Cine_616" Label="Mary Phase 1" State="false"/>
+				<Setting Id="Lv_MaryBossFight_Cine_415" Label="Mary Phase 2" State="false"/>
+			</Setting>
+			<Setting Id="HotelP" Label="Item Pickups" State="false">
+				<Setting Id="[+] LhOW_MusicBoxKey (!)" Label="Ornamental Key" State="false"/>
+				<Setting Id="[+] LhOW_SecondFloorLeftWingKey (!)" Label="Sunrise Wing Key" State="false"/>
+				<Setting Id="[+] LhOW_EmployeeElevatorKey (!)" Label="Employee Elevator Key" State="false"/>
+				<Setting Id="[+] LhOW_202Key (!)" Label="Key to Hotel Room 202" State="false"/>
+				<Setting Id="[+] LhOW_FreshApple (!)" Label="Ripe Apple" State="false"/>
+				<Setting Id="[+] LhOW_BasementStaircaseKey (!)" Label="Basement Key" State="false"/>
+				<Setting Id="[+] LhOW_Valve (!)" Label="Valve" State="false"/>
+				<Setting Id="[+] LhOW_BarKey (!)" Label="Venus Tears Bar Key" State="false"/>
+				<Setting Id="[+] LhOW_Figurine_C (!)" Label="The Little Mermaid Figurine" State="false"/>
+				<Setting Id="[+] LhOW_107Key (!)" Label="Key to Hotel Room 107" State="false"/>
+				<Setting Id="[+] LhOW_TechKey (!)" Label="Fireplace Key" State="false"/>
+				<Setting Id="[+] LhOW_Figurine_A_Damaged (!)" Label="Cinderella Figurine" State="false"/>
+				<Setting Id="[+] LhOW_Figurine_Damaged (!)" Label="Snow White Figurine" State="false"/>
+				<Setting Id="[+] LhOW_ThirdFloorCorridorKey (!)" Label="3F Corridor Key" State="false"/>
+				<Setting Id="[+] LhFW_ScarlettEgg (!)" Label="Scarlett Egg" State="false"/>
+				<Setting Id="[+] LhFW_RustColoredEgg (!)" Label="Rust Coloured Egg" State="false"/>
 			</Setting>
 		</Setting>
 	</Setting>
 	<Setting Id="End" Label="Final Split (Results Screen, always active)" State="false"/>
 </Settings>
-
