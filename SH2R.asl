@@ -17,22 +17,36 @@ init
 	IntPtr gEngine = vars.Helper.ScanRel(3, "48 89 05 ???????? 48 85 c9 74 ?? e8 ???????? 48 8d 4d");
 	IntPtr fNames = vars.Helper.ScanRel(3, "48 8d 05 ?? ?? ?? ?? eb ?? 85 d2");
 	
+	// gEngine.TransitionType
 	vars.Helper["Pause"] = vars.Helper.Make<bool>(gEngine, 0xADA);
 	
+	// gEngine.TransitionDescription
 	vars.Helper["Transition"] = vars.Helper.MakeString(gEngine, 0xAE0, 0x0);
 	
+	// gEngine.GameInstance.bDeathReload[1]
 	vars.Helper["DeathLoad"] = vars.Helper.Make<bool>(gEngine, 0x1070, 0x2B0);
 	
+	// gEngine.GameInstance.LocalPlayers[0].PlayerController.AcknowledgedPawn.FName
+	vars.Helper["AcknowledgedPawn"] = vars.Helper.Make<ulong>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x18);
+	
+	// gEngine.GameInstance.LocalPlayers[0].PlayerController.AcknowledgedPawn.Items.CollectedItems.NumElements 
 	vars.Helper["Items"] = vars.Helper.Make<IntPtr>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6C0, 0x110 + 0x0);
 	
-	vars.Helper["ItemCount"] = vars.Helper.Make<int>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6C0, 0x110 + 0x8);
+	// gEngine.GameInstance.LocalPlayers[0].PlayerController.AcknowledgedPawn.Items.CollectedItems.ArraySize
+	vars.Helper["ItemCount"] = vars.Helper.Make<uint>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6C0, 0x110 + 0x8);
 	
-	vars.Helper["GameplayMenu"] = vars.Helper.Make<long>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x100, 0x2D8);
+	// gEngine.GameInstance.LocalPlayers[0].PlayerController.AcknowledgedPawn.UIComponent.GameplayMenuWidget.CurrentCastedWidget
+	vars.Helper["InInventory"] = vars.Helper.Make<long>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x100, 0x2D8);
 	
-	vars.Helper["Saving"] = vars.Helper.Make<long>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x128, 0x318);
+	// gEngine.GameInstance.LocalPlayers[0].PlayerController.AcknowledgedPawn.UIComponent.GameplaySaveMenuWidget.ActualSavePoint.FName
+	vars.Helper["Saving"] = vars.Helper.Make<ulong>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x128, 0x318, 0x18);
+	
+	// gEngine.GameInstance.LocalPlayers[0].PlayerController.AcknowledgedPawn.UIComponent.GameplaySaveMenuWidget.ActualSavePoint.FName
 	vars.Helper["GameOver"] = vars.Helper.Make<long>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x118);
 	
-	vars.Helper["End"] = vars.Helper.Make<ulong>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x120);
+	vars.Helper["End"] = vars.Helper.Make<ulong>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x120, 0x18);
+	vars.Helper["End"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
+	
 	vars.Helper["Ending"] = vars.Helper.Make<byte>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x740, 0xC0);
 	
 	vars.Helper["CutsceneName"] = vars.Helper.Make<ulong>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x140, 0x318, 0x18, 0x2B0, 0x2E0, 0x4C8);
@@ -79,6 +93,8 @@ update
 	
 	vars.Helper.Update();
 	vars.Helper.MapPointers();
+	
+	//print(vars.FNameToShortString(current.Saving));
 }
 
 onStart
@@ -93,7 +109,7 @@ onStart
 
 start
 {
-	if(string.Format(vars.FNameToShortString(old.CutsceneName)) == "Lv_ObservationDeck_01_Cine" && string.Format(vars.FNameToShortString(current.CutsceneName)) != "Lv_ObservationDeck_01_Cine"){
+	if(vars.FNameToShortString(old.CutsceneName) == "Lv_ObservationDeck_01_Cine" && vars.FNameToShortString(current.CutsceneName) != "Lv_ObservationDeck_01_Cine"){
 		return true;
 	}
 }
@@ -104,8 +120,8 @@ split
 	string setting = "";
 	
 	// Item splits.
-	if(current.ItemCount > 0){
-		for (int i = 0; i < old.ItemCount; i++)
+	if(vars.FNameToShortString(current.AcknowledgedPawn) == "SHCharacterPlay_BP_C_2147333938"){ 
+		for (int i = 0; i < current.ItemCount; i++)
 		{
 
 			ulong item = vars.Helper.Read<ulong>(current.Items + 0xC * i);
@@ -137,7 +153,7 @@ split
 	}
 	
 	if(current.CutsceneName != 0 && old.CutsceneName == 0){
-		setting = string.Format(vars.FNameToShortString(current.CutsceneName)) + "_" + current.CutsceneDuration;
+		setting = vars.FNameToShortString(current.CutsceneName) + "_" + current.CutsceneDuration;
 	}
 	
 	if(current.Ending != 0 && current.End > 0 && old.End == 0){
@@ -157,13 +173,13 @@ split
 
 isLoading
 {
-	return current.Saving != 0 || current.GameOver != 0 || current.Transition == "/Game/Game/Maps/Main_Mennu/Main_Menu" || current.localPlayer == null || current.DeathLoad || current.CutscenePlaying || current.Pause && current.GameplayMenu == 0;
+	return vars.FNameToShortString(current.Saving) == "SavePoint_Wall_BP_C_1"  || current.GameOver != 0 || current.Transition == "/Game/Game/Maps/Main_Mennu/Main_Menu" || current.DeathLoad || current.CutscenePlaying || current.Pause && current.InInventory == 0;
 	//return true;
 }
 
 reset
 {
-	if(string.Format(vars.FNameToShortString(current.CutsceneName)) == "Lv_ObservationDeck_01_Cine" && string.Format(vars.FNameToShortString(old.CutsceneName)) != "Lv_ObservationDeck_01_Cine"){
+	if(vars.FNameToShortString(current.CutsceneName) == "Lv_ObservationDeck_01_Cine" && vars.FNameToShortString(old.CutsceneName) != "Lv_ObservationDeck_01_Cine"){
 		return true;
 	}
 }
