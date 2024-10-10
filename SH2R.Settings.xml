@@ -125,13 +125,13 @@
 				<Setting Id="[+] HosFW_SafeSymbol (!)" Label="Safe Button" State="false"/>
 				<Setting Id="[+] HosFW_RooftopKey (!)" Label="Rooftop Key" State="false"/>
 				<Setting Id="[+] HosFW_RooftopDiaryPageNote (!)" Label="Page From A Diary" State="false"/>
-				<Setting Id="[+] HosFW_LobotomyOrbitoclast (!)" Label="Key of Bliss" State="false"/>
-				<Setting Id="[+] HosFW_LobotomyHammer (!)" Label="Instrument of Force" State="false"/>
-				<Setting Id="[+] HosFW_LouisBoxKey (!)" Label="Lapis Eye Key" State="false"/>
-				<Setting Id="[+] HosFW_ElevatorButtonBF (!)" Label="-1 Elevator Button" State="false"/>
-				<Setting Id="[+] HosFW_CopperRing (!)" Label="Copper Ring" State="false"/>
-				<Setting Id="[+] HosFW_LeadRing (!)" Label="Lead Ring" State="false"/>
-				<Setting Id="[+] HosFW_HospitalEntranceKey (!)" Label="Hospital Entrance Key" State="false"/>
+				<Setting Id="[+] HosOW_LobotomyOrbitoclast (!)" Label="Key of Bliss" State="false"/>
+				<Setting Id="[+] HosOW_LobotomyHammer (!)" Label="Instrument of Force" State="false"/>
+				<Setting Id="[+] HosOW_LouisBoxKey (!)" Label="Lapis Eye Key" State="false"/>
+				<Setting Id="[+] HosOW_ElevatorButtonBF (!)" Label="-1 Elevator Button" State="false"/>
+				<Setting Id="[+] HosOW_CopperRing (!)" Label="Copper Ring" State="false"/>
+				<Setting Id="[+] HosOW_LeadRing (!)" Label="Lead Ring" State="false"/>
+				<Setting Id="[+] HosOW_HospitalEntranceKey (!)" Label="Hospital Entrance Key" State="false"/>
 			</Setting>
 		</Setting>
 		<Setting Id="OSVale" Label="Other World South Vale" State="false">
@@ -220,7 +220,7 @@
 				<Setting Id="[+] LhOW_Figurine_A_Damaged (!)" Label="Cinderella Figurine" State="false"/>
 				<Setting Id="[+] LhOW_Figurine_Damaged (!)" Label="Snow White Figurine" State="false"/>
 				<Setting Id="[+] LhOW_ThirdFloorCorridorKey (!)" Label="3F Corridor Key" State="false"/>
-				<Setting Id="[+] LhFW_ScarlettEgg (!)" Label="Scarlett Egg" State="false"/>
+				<Setting Id="[+] LhFW_ScarletEgg (!)" Label="Scarlett Egg" State="false"/>
 				<Setting Id="[+] LhFW_RustColoredEgg (!)" Label="Rust Coloured Egg" State="false"/>
 			</Setting>
 		</Setting>
