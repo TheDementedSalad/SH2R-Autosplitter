@@ -140,7 +140,7 @@
 			</Setting>
 			<Setting Id="OSVP" Label="Item Pickups" State="false">
 				<Setting Id="[+] EcOW_Wrench (!)" Label="Wrench" State="false"/>
-				<Setting Id="[+] EcOW_HistoricalSocietyKey (!)" Label="Historical Society Key" State="false"/>
+				<Setting Id="[+] WcOW_HistoricalSocietyKey (!)" Label="Historical Society Key" State="false"/>
 			</Setting>
 		</Setting>
 		<Setting Id="Prison" Label="Museum/Prison" State="false">
@@ -163,6 +163,7 @@
 				<Setting Id="[+] PriOW_Weight05 (!)" Label="The Lightest Weight" State="false"/>
 				<Setting Id="[+] LabOW_Lever (!)" Label="Execution Lever" State="false"/>
 			</Setting>
+
 		</Setting>
 		<Setting Id="Labr" Label="Labyrinth" State="false">
 			<Setting Id="LabrC" Label="Cutscenes" State="false">
