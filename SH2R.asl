@@ -196,8 +196,8 @@ isLoading
 {
 	return vars.FNameToShortString2(current.Saving) == "SavePoint_Wall_BP_C_" || vars.FNameToShortString2(current.GameOver) == "GameplayGameOver_Widget_C_" || 
 			current.Transition == "/Game/Game/Maps/Main_Mennu/Main_Menu" || current.DeathLoad || current.CutscenePlaying || current.LoadVisible == 1 ||
-			vars.FNameToShortString2(current.PauseWidget) == "InGameMenuWidget_BP_C_" ||vars.FNameToShortString2(current.localPlayer) != "SHPlayerControllerPlay_BP_C_";
-	//return true;
+			vars.FNameToShortString2(current.PauseWidget) == "InGameMenuWidget_BP_C_" || vars.FNameToShortString2(current.localPlayer) != "SHPlayerControllerPlay_BP_C_" ||
+			vars.FNameToShortString2(current.End) == "GameplayEndGame_WidgetBP_C_";
 }
 
 reset
