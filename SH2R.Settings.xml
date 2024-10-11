@@ -42,7 +42,7 @@
 				<Setting Id="[+] Pistol (!)" Label="Pistol" State="false"/>
 				<Setting Id="[+] WsaFW_KeyToAp212 (!)" Label="Apartment 212 Key" State="false"/>
 				<Setting Id="[+] WsaFW_Coin1 (!)" Label="Coin [Man]" State="false"/>
-				<Setting Id="[+] WsaFW_KeyToStaircase (!)" Label="2F Small Staircase Key" State="false"/>
+				<Setting Id="[+] WsaFW_KeyToStaircase (!)" Label="2F Small Staircase Key (Standard?)" State="false"/>
 				<Setting Id="[+] WsaFW_CannedJuice (!)" Label="Canned Juice" State="false"/>
 				<Setting Id="[+] WsaFW_Coin3 (!)" Label="Coin [Snake]" State="false"/>
 				<Setting Id="[+] WsaFW_Coin2 (!)" Label="Coin [Woman]" State="false"/>
@@ -74,7 +74,6 @@
 			<Setting Id="WSVC" Label="Cutscenes" State="false">
 				<Setting Id="Lv_RoadToPark_01_Cine_1867" Label="Meet With Laura" State="false"/>
 				<Setting Id="Lv_RosewaterPark_01_Cine_7481" Label="Meet Maria" State="false"/>
-				<Setting Id="Lv_WestCity_03_Cine_2310" Label="Road's Out" State="false"/>
 				<Setting Id="Lv_HeavensNight_01_Cine_1900" Label="Reach Heaven's Night" State="false"/>
 				<Setting Id="Lv_WestCity_07_Cine_5425" Label="Maria's Story About Lady of the Island" State="false"/>
 				<Setting Id="Lv_MovieTheater_01_Cine_3328" Label="Meet Eddie In the Theater" State="false"/>
@@ -82,7 +81,7 @@
 			</Setting>
 			<Setting Id="WSVP" Label="Item Pickups" State="false">
 				<Setting Id="[+] WcFW_KeyToMotelGate (!)" Label="Gate Key" State="false"/>
-				<Setting Id="[+] IronPipe (!)" Label="Iron Pipe" State="false"/>
+				<Setting Id="Lv_WestCity_03_Cine_2310" Label="Iron Pipe" State="false"/>
 			</Setting>
 		</Setting>
 		<Setting Id="BrHosp" Label="Brookhaven Hospital" State="false">
@@ -100,7 +99,6 @@
 				<Setting Id="Lv_FleshLipBossFight_Cine_885" Label="Defeat Flesh Lips" State="false"/>
 				<Setting Id="Lv_Hospital_OW_02_B_Cine_280" Label="Lift the Cloth For Lapis Key Puzzle" State="false"/>
 				<Setting Id="Lv_Hospital_OW_02_B_Cine_1880" Label="Open the Metal Box" State="false"/>
-				<Setting Id="Lv_Hospital_OW_Basement_D_Cine_2984" Label="Meet Up With Maria" State="false"/>
 				<Setting Id="Lv_Hospital_OW_01_B_Logic_2122" Label="Open The Freezer" State="false"/>
 				<Setting Id="Lv_Hospital_OW_02_B_Cine_1766" Label="Open the Ring Door" State="false"/>
 				<Setting Id="Lv_Hospital_PyramidChase_02_Cine_2344" Label="Maria Dies" State="false"/>
@@ -128,7 +126,7 @@
 				<Setting Id="[+] HosOW_LobotomyHammer (!)" Label="Instrument of Force" State="false"/>
 				<Setting Id="[+] HosOW_LouisBoxKey (!)" Label="Lapis Eye Key" State="false"/>
 				<Setting Id="[+] HosOW_ElevatorButtonBF (!)" Label="-1 Elevator Button" State="false"/>
-				<Setting Id="[+] HosOW_CopperRing (!)" Label="Copper Ring" State="false"/>
+				<Setting Id="Lv_Hospital_OW_Basement_D_Cine_2984" Label="Copper Ring" State="false"/>
 				<Setting Id="[+] HosOW_LeadRing (!)" Label="Lead Ring" State="false"/>
 				<Setting Id="[+] HosOW_HospitalEntranceKey (!)" Label="Hospital Entrance Key" State="false"/>
 			</Setting>
@@ -153,7 +151,7 @@
 				<Setting Id="[+] HisOW_PurgatoryKey (!)" Label="Spiral-Writing Key" State="false"/>
 				<Setting Id="[+] PriOW_Weight01 (!)" Label="The Heavist Weight" State="false"/>
 				<Setting Id="[+] PriOW_Weight03 (!)" Label="Medium Weight" State="false"/>
-				<Setting Id="[+] PriOW_GunsRoomKey (!)" Label="Armoury Key" State="false"/>
+				<Setting Id="[+] PriOW_GunRoomKey (!)" Label="Armoury Key" State="false"/>
 				<Setting Id="[+] Rifle (!)" Label="Rifle" State="false"/>
 				<Setting Id="[+] PriOW_NaughtyBlockKey (!)" Label="Block D Key" State="false"/>
 				<Setting Id="[+] PriOW_GuardRoomKey (!)" Label="Shiv Key" State="false"/>
@@ -163,7 +161,6 @@
 				<Setting Id="[+] PriOW_Weight05 (!)" Label="The Lightest Weight" State="false"/>
 				<Setting Id="[+] LabOW_Lever (!)" Label="Execution Lever" State="false"/>
 			</Setting>
-
 		</Setting>
 		<Setting Id="Labr" Label="Labyrinth" State="false">
 			<Setting Id="LabrC" Label="Cutscenes" State="false">
@@ -211,11 +208,11 @@
 				<Setting Id="[+] LhOW_EmployeeElevatorKey (!)" Label="Employee Elevator Key" State="false"/>
 				<Setting Id="[+] LhOW_202Key (!)" Label="Key to Hotel Room 202" State="false"/>
 				<Setting Id="[+] LhOW_FreshApple (!)" Label="Ripe Apple" State="false"/>
-				<Setting Id="[+] LhOW_BasementStaircaseKey (!)" Label="Basement Key" State="false"/>
+				<Setting Id="[+] LhOW_VideoTape (!)" Label="Basement Key/Video Tape" State="false"/>
 				<Setting Id="[+] LhOW_Valve (!)" Label="Valve" State="false"/>
 				<Setting Id="[+] LhOW_BarKey (!)" Label="Venus Tears Bar Key" State="false"/>
 				<Setting Id="[+] LhOW_Figurine_C (!)" Label="The Little Mermaid Figurine" State="false"/>
-				<Setting Id="[+] LhOW_107Key (!)" Label="Key to Hotel Room 107" State="false"/>
+				<Setting Id="[+] LhOW_CleanHotelRoomNote (!)" Label="Key to Hotel Room 107" State="false"/>
 				<Setting Id="[+] LhOW_TechKey (!)" Label="Fireplace Key" State="false"/>
 				<Setting Id="[+] LhOW_Figurine_A_Damaged (!)" Label="Cinderella Figurine" State="false"/>
 				<Setting Id="[+] LhOW_Figurine_Damaged (!)" Label="Snow White Figurine" State="false"/>
