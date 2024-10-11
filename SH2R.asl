@@ -9,7 +9,6 @@ startup
 	
 	vars.completedSplits = new HashSet<string>();
 	vars.Inventory = new Dictionary<ulong, int>();
-	vars.totalGameTime = 0;
 }
 
 init
@@ -58,19 +57,22 @@ init
 	// gEngine.GameInstance.LocalPlayers[0].PlayerController.AcknowledgedPawn.UIComponent.GameplaySaveMenuWidget.ActualSavePoint.FName
 	vars.Helper["GameOver"] = vars.Helper.Make<ulong>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x118, 0x18);
 	vars.Helper["GameOver"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
-	
+
 	// gEngine.GameInstance.LocalPlayers[0].PlayerController.AcknowledgedPawn.UIComponent.GameplaySaveMenuWidget.ActualSavePoint.FName
 	vars.Helper["End"] = vars.Helper.Make<ulong>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x120, 0x18);
 	vars.Helper["End"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
 	
-	vars.Helper["Ending"] = vars.Helper.Make<byte>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x740, 0xC0);
+	//vars.Helper["Ending"] = vars.Helper.Make<byte>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x740, 0xC0);
 	
+	// gEngine.GameInstance.LocalPlayers[0].PlayerController.AcknowledgedPawn.UIComponent.SkipWidget.N/A.SHCutscenePlayer.LevelSequenceActor.SequencePlayer.FName
 	vars.Helper["CutsceneName"] = vars.Helper.Make<ulong>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x140, 0x318, 0x18, 0x2B0, 0x2E0, 0x4C8);
 	vars.Helper["CutsceneName"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
 	
+	// gEngine.GameInstance.LocalPlayers[0].PlayerController.AcknowledgedPawn.UIComponent.SkipWidget.N/A.SHCutscenePlayer.LevelSequenceActor.SequencePlayer.Status
 	vars.Helper["CutscenePlaying"] = vars.Helper.Make<bool>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x140, 0x318, 0x18, 0x2B0, 0x2E0, 0x280);
 	vars.Helper["CutscenePlaying"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
 	
+	// gEngine.GameInstance.LocalPlayers[0].PlayerController.AcknowledgedPawn.UIComponent.SkipWidget.N/A.SHCutscenePlayer.LevelSequenceActor.SequencePlayer.LastFrameNumber
 	vars.Helper["CutsceneDuration"] = vars.Helper.Make<int>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x140, 0x318, 0x18, 0x2B0, 0x2E0, 0x294);
 	vars.Helper["CutsceneDuration"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
 	
@@ -170,7 +172,7 @@ split
 			
 			// Debug. Comment out before release.
 			//if (!string.IsNullOrEmpty(setting))
-			//vars.Log(setting);
+			//vars.Log(setting);	
 		}
 	}
 	
@@ -183,8 +185,8 @@ split
 	}
 	
 	// Debug. Comment out before release.
-	if (!string.IsNullOrEmpty(setting))
-	vars.Log(setting);
+	//if (!string.IsNullOrEmpty(setting))
+	//vars.Log(setting);
 
 	if (settings.ContainsKey(setting) && settings[setting]
 		&& vars.completedSplits.Add(setting))
