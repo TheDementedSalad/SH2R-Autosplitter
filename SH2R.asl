@@ -23,8 +23,20 @@ init
 	// gEngine.TransitionDescription
 	vars.Helper["Transition"] = vars.Helper.MakeString(gEngine, 0xAE0, 0x0);
 	
+	// gEngine.ViewPort.World.AuthorityGameMode.MenuController.StateWidgets[0].FName
+	vars.Helper["PauseWidget"] = vars.Helper.Make<ulong>(gEngine, 0x9A0, 0x78, 0x150, 0x358, 0xE8, 0x40, 0x18);
+	vars.Helper["PauseWidget"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
+	
+	// gEngine.ViewPort.World.AuthorityGameMode.MenuController.StateWidgets[1].HintText_lbl.Visibility
+	vars.Helper["LoadVisible"] = vars.Helper.Make<float>(gEngine, 0x9A0, 0x78, 0x150, 0x358, 0xE8, 0x90, 0x300, 0xE8);
+	vars.Helper["LoadVisible"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
+	
 	// gEngine.GameInstance.bDeathReload[1]
 	vars.Helper["DeathLoad"] = vars.Helper.Make<bool>(gEngine, 0x1070, 0x2B0);
+	
+	// gEngine.GameInstance.LocalPlayers[0].PlayerController.FName
+	vars.Helper["localPlayer"] = vars.Helper.Make<ulong>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x18);
+	vars.Helper["localPlayer"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
 	
 	// gEngine.GameInstance.LocalPlayers[0].PlayerController.AcknowledgedPawn.FName
 	vars.Helper["AcknowledgedPawn"] = vars.Helper.Make<ulong>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x18);
@@ -36,17 +48,18 @@ init
 	// gEngine.GameInstance.LocalPlayers[0].PlayerController.AcknowledgedPawn.Items.CollectedItems.ArraySize
 	vars.Helper["ItemCount"] = vars.Helper.Make<uint>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6C0, 0x110 + 0x8);
 	
-	// gEngine.GameInstance.LocalPlayers[0].PlayerController.AcknowledgedPawn.UIComponent.GameplayMenuWidget.CurrentCastedWidget
-	vars.Helper["InInventory"] = vars.Helper.Make<long>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x100, 0x2D8);
+	// gEngine.GameInstance.LocalPlayers[0].PlayerController.AcknowledgedPawn.UIComponent.GameplayMenuWidget.CurrentCastedWidget.FName
+	vars.Helper["CurrentWidget"] = vars.Helper.Make<ulong>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x100, 0x2D8, 0x18);
 	
 	// gEngine.GameInstance.LocalPlayers[0].PlayerController.AcknowledgedPawn.UIComponent.GameplaySaveMenuWidget.ActualSavePoint.FName
 	vars.Helper["Saving"] = vars.Helper.Make<ulong>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x128, 0x318, 0x18);
 	vars.Helper["Saving"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
 	
 	// gEngine.GameInstance.LocalPlayers[0].PlayerController.AcknowledgedPawn.UIComponent.GameplaySaveMenuWidget.ActualSavePoint.FName
-	vars.Helper["GameOver"] = vars.Helper.Make<long>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x118);
+	vars.Helper["GameOver"] = vars.Helper.Make<ulong>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x118, 0x18);
 	
-	vars.Helper["End"] = vars.Helper.Make<ulong>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x120);
+	// gEngine.GameInstance.LocalPlayers[0].PlayerController.AcknowledgedPawn.UIComponent.GameplaySaveMenuWidget.ActualSavePoint.FName
+	vars.Helper["End"] = vars.Helper.Make<ulong>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x120, 0x18);
 	vars.Helper["End"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
 	
 	vars.Helper["Ending"] = vars.Helper.Make<byte>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x740, 0xC0);
@@ -59,9 +72,6 @@ init
 	
 	vars.Helper["CutsceneDuration"] = vars.Helper.Make<int>(gEngine, 0x1070, 0x38, 0x0, 0x30, 0x358, 0x6F0, 0x140, 0x318, 0x18, 0x2B0, 0x2E0, 0x294);
 	vars.Helper["CutsceneDuration"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
-	
-	vars.Helper["localPlayer"] = vars.Helper.Make<long>(gEngine, 0x1070, 0x38, 0x0, 0x30);
-	vars.Helper["localPlayer"].FailAction = MemoryWatcher.ReadFailAction.SetZeroOrNull;
 	
 	vars.FNameToString = (Func<ulong, string>)(fName =>
 	{
@@ -87,6 +97,15 @@ init
 
 		return name.Substring(Math.Max(dot, slash) + 1);
 	});
+	
+	vars.FNameToShortString2 = (Func<ulong, string>)(fName =>
+	{
+		string name = vars.FNameToString(fName);
+
+		int under = name.LastIndexOf('_');
+
+		return name.Substring(0, under + 1);
+	});
 }
 
 update
@@ -96,7 +115,7 @@ update
 	vars.Helper.Update();
 	vars.Helper.MapPointers();
 	
-	//print(vars.FNameToShortString(current.Saving));
+	//print(vars.FNameToShortString2(current.LoadWidget));
 }
 
 onStart
@@ -122,7 +141,7 @@ split
 	string setting = "";
 	
 	// Item splits.
-	if(vars.FNameToShortString(current.AcknowledgedPawn) == "SHCharacterPlay_BP_C_2147333938"){ 
+	if(vars.FNameToShortString2(current.AcknowledgedPawn) == "SHCharacterPlay_BP_C_"){ 
 		for (int i = 0; i < current.ItemCount; i++)
 		{
 
@@ -158,13 +177,13 @@ split
 		setting = vars.FNameToShortString(current.CutsceneName) + "_" + current.CutsceneDuration;
 	}
 	
-	if(current.Ending != 0 && current.End > 0 && old.End == 0){
+	if(vars.FNameToShortString2(current.End) == "GameplayEndGame_WidgetBP_C_" && vars.FNameToShortString2(old.End) != "GameplayEndGame_WidgetBP_C_"){
 		return true;
 	}
 	
 	// Debug. Comment out before release.
-	//if (!string.IsNullOrEmpty(setting))
-	//vars.Log(setting);
+	if (!string.IsNullOrEmpty(setting))
+	vars.Log(setting);
 
 	if (settings.ContainsKey(setting) && settings[setting]
 		&& vars.completedSplits.Add(setting))
@@ -175,7 +194,9 @@ split
 
 isLoading
 {
-	return vars.FNameToShortString(current.Saving) == "SavePoint_Wall_BP_C_1"  || current.GameOver != 0 || current.Transition == "/Game/Game/Maps/Main_Mennu/Main_Menu" || current.DeathLoad || current.CutscenePlaying || current.Pause && current.InInventory == 0;
+	return vars.FNameToShortString2(current.Saving) == "SavePoint_Wall_BP_C_" || vars.FNameToShortString2(current.GameOver) == "GameplayGameOver_Widget_C_" || 
+			current.Transition == "/Game/Game/Maps/Main_Mennu/Main_Menu" || current.DeathLoad || current.CutscenePlaying || current.LoadVisible == 1 ||
+			vars.FNameToShortString2(current.PauseWidget) == "InGameMenuWidget_BP_C_" ||vars.FNameToShortString2(current.localPlayer) != "SHPlayerControllerPlay_BP_C_";
 	//return true;
 }
 
