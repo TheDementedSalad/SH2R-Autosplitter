@@ -15,6 +15,9 @@ init
 {
 	IntPtr gEngine = vars.Helper.ScanRel(3, "48 89 05 ???????? 48 85 c9 74 ?? e8 ???????? 48 8d 4d");
 	IntPtr fNames = vars.Helper.ScanRel(3, "48 8d 05 ?? ?? ?? ?? eb ?? 85 d2");
+	IntPtr gSyncLoad = vars.Helper.ScanRel(21, "33 C0 0F 57 C0 F2 0F 11 05");
+	
+	vars.Helper["isLoading"] = vars.Helper.Make<bool>(gSyncLoad);
 	
 	// gEngine.TransitionType
 	vars.Helper["Pause"] = vars.Helper.Make<bool>(gEngine, 0xADA);
@@ -171,8 +174,14 @@ split
 			vars.Inventory[item] = amount;
 			
 			// Debug. Comment out before release.
-			//if (!string.IsNullOrEmpty(setting))
-			//vars.Log(setting);	
+			if (!string.IsNullOrEmpty(setting))
+			vars.Log(setting);
+
+			if (settings.ContainsKey(setting) && settings[setting]
+				&& vars.completedSplits.Add(setting))
+			{
+				return true;
+			}
 		}
 	}
 	
@@ -200,7 +209,7 @@ isLoading
 	return vars.FNameToShortString2(current.Saving) == "SavePoint_Wall_BP_C_" || vars.FNameToShortString2(current.GameOver) == "GameplayGameOver_Widget_C_" || 
 			current.Transition == "/Game/Game/Maps/Main_Mennu/Main_Menu" || current.DeathLoad || current.CutscenePlaying || current.LoadVisible == 1 ||
 			vars.FNameToShortString2(current.PauseWidget) == "InGameMenuWidget_BP_C_" || vars.FNameToShortString2(current.localPlayer) != "SHPlayerControllerPlay_BP_C_" ||
-			vars.FNameToShortString2(current.End) == "GameplayEndGame_WidgetBP_C_";
+			vars.FNameToShortString2(current.End) == "GameplayEndGame_WidgetBP_C_" || current.isLoading;
 }
 
 reset
