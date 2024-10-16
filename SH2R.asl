@@ -9,6 +9,7 @@ startup
 	
 	vars.completedSplits = new HashSet<string>();
 	vars.Inventory = new Dictionary<ulong, int>();
+	vars.splitstoComplete = new HashSet<string>();
 }
 
 init
@@ -120,7 +121,7 @@ update
 	
 	vars.Helper.Update();
 	vars.Helper.MapPointers();
-	
+
 	//print(vars.FNameToShortString2(current.LoadWidget));
 }
 
@@ -157,36 +158,27 @@ split
 			int oldAmount;
 			if (vars.Inventory.TryGetValue(item, out oldAmount))
 			{
-				if (oldAmount < amount)
-				{
-					setting = string.Format(ItemFormat, '+', vars.FNameToShortString(item), amount);
-				}
-				else if (oldAmount > amount)
-				{
-					setting = string.Format(ItemFormat, '-', vars.FNameToShortString(item), amount);
-				}
 			}
 			else
 			{
 				setting = string.Format(ItemFormat, '+', vars.FNameToShortString(item), '!');
+				vars.splitstoComplete.Add("[+] " + vars.FNameToShortString(item) + " (!)");
 			}
 
 			vars.Inventory[item] = amount;
 			
 			// Debug. Comment out before release.
-			if (!string.IsNullOrEmpty(setting))
-			vars.Log(setting);
-
-			if (settings.ContainsKey(setting) && settings[setting]
-				&& vars.completedSplits.Add(setting))
-			{
-				return true;
-			}
+			//if (!string.IsNullOrEmpty(setting))
+			//vars.Log(setting);
+		
+		
+		
 		}
 	}
 	
 	if(current.CutsceneName != 0 && old.CutsceneName == 0){
 		setting = vars.FNameToShortString(current.CutsceneName) + "_" + current.CutsceneDuration;
+		vars.splitstoComplete.Add(vars.FNameToShortString(current.CutsceneName) + "_" + current.CutsceneDuration);
 	}
 	
 	if(vars.FNameToShortString2(current.End) == "GameplayEndGame_WidgetBP_C_" && vars.FNameToShortString2(old.End) != "GameplayEndGame_WidgetBP_C_"){
@@ -197,10 +189,9 @@ split
 	//if (!string.IsNullOrEmpty(setting))
 	//vars.Log(setting);
 
-	if (settings.ContainsKey(setting) && settings[setting]
-		&& vars.completedSplits.Add(setting))
-	{
+	if (settings.ContainsKey(setting) && settings[setting] && vars.completedSplits.Add(setting) && vars.splitstoComplete.Contains(setting)){
 		return true;
+		vars.splitstoComplete.Clear();
 	}
 }
 
