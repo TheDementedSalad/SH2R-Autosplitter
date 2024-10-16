@@ -162,7 +162,7 @@ split
 			else
 			{
 				setting = string.Format(ItemFormat, '+', vars.FNameToShortString(item), '!');
-				vars.splitstoComplete.Add("[+] " + vars.FNameToShortString(item) + " (!)");
+				vars.splitstoComplete.Add(setting);
 			}
 
 			vars.Inventory[item] = amount;
@@ -171,8 +171,10 @@ split
 			//if (!string.IsNullOrEmpty(setting))
 			//vars.Log(setting);
 		
-		
-		
+			if (settings.ContainsKey(setting) && settings[setting] && vars.completedSplits.Add(setting) && vars.splitstoComplete.Contains(setting)){
+				return true;
+				vars.splitstoComplete.Clear();
+			}
 		}
 	}
 	
@@ -186,8 +188,8 @@ split
 	}
 	
 	// Debug. Comment out before release.
-	//if (!string.IsNullOrEmpty(setting))
-	//vars.Log(setting);
+	if (!string.IsNullOrEmpty(setting))
+	vars.Log(setting);
 
 	if (settings.ContainsKey(setting) && settings[setting] && vars.completedSplits.Add(setting) && vars.splitstoComplete.Contains(setting)){
 		return true;
